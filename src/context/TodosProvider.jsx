@@ -8,7 +8,7 @@ function reducer(todos, action) {
       const nextTodo = {
         id: crypto.randomUUID(),
         title: action.title,
-        isCompleted: false,
+        isCompleted: action.isCompleted,
       };
       return [...todos, nextTodo];
     }
@@ -20,8 +20,8 @@ function reducer(todos, action) {
 function TodosProvider({ children }) {
   const [todos, dispatch] = useReducer(reducer, INITIAL_TODOS);
 
-  function handleAddTodo(title) {
-    dispatch({ type: "add-todo", title: title });
+  function handleAddTodo(title, isCompleted) {
+    dispatch({ type: "add-todo", title: title, isCompleted: isCompleted });
   }
 
   const value = {
