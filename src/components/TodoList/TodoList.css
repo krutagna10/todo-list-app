@@ -1,0 +1,9 @@
+.todo {
+  background-color: var(--very-dark-desaturated-blue);
+  font-size: 18px;
+  border-radius: 0.5rem;
+}
+
+.todo__list {
+  list-style: none;
+}
