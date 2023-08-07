@@ -1,7 +1,6 @@
 import TodosContext from "../../context/TodosContext.jsx";
 import { useContext, useState } from "react";
 import "./TodoAdd.css";
-import InputCheckbox from "../InputCheckbox/InputCheckbox.jsx";
 
 function TodoAdd() {
   const { onAddTodo } = useContext(TodosContext);
@@ -12,8 +11,9 @@ function TodoAdd() {
     setTitle(event.target.value);
   }
 
-  function handleIsCompletedChange(nextIsCompleted) {
-    setIsCompleted(nextIsCompleted);
+  function handleIsCompletedChange(event) {
+    console.log("Todo checkbox of TodoAdd.js has been edited");
+    setIsCompleted(event.target.checked);
   }
 
   function handleSubmit(event) {
@@ -24,10 +24,15 @@ function TodoAdd() {
 
   return (
     <form className="form flex items-center gap-4" onSubmit={handleSubmit}>
-      <InputCheckbox
-        checked={false}
-        onIsCompletedChange={handleIsCompletedChange}
-      />
+      <div className="checkbox">
+        <input
+          type="checkbox"
+          id="checkbox__input"
+          className="checkbox__input"
+          onChange={handleIsCompletedChange}
+        />
+        <label htmlFor="checkbox__input" className="checkbox__label" />
+      </div>
       <input
         className="form__input"
         type="text"

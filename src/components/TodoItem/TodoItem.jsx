@@ -1,15 +1,28 @@
 import "./TodoItem.css";
 import { useContext, useState } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
-import InputCheckbox from "../InputCheckbox/InputCheckbox.jsx";
 
 function TodoItem({ todo, index }) {
-  const { todos } = useContext(TodosContext);
+  const { todos, onEditTodo } = useContext(TodosContext);
+
+  function handleIsCompletedChange(event) {
+    console.log("Todo Checkbox in TodoItem.js has been edited");
+    onEditTodo({ ...todo, isCompleted: event.target.checked });
+  }
 
   return (
     <>
       <li className="todo__item flex items-center gap-4">
-        <InputCheckbox checked={todo.isCompleted} />
+        <div className="checkbox">
+          <input
+            type="checkbox"
+            id="checkbox__input"
+            className={`checkbox__input ${todo.isCompleted ? "checked" : ""}`}
+            onChange={handleIsCompletedChange}
+            // checked={todo.isCompleted}
+          />
+          <label htmlFor="checkbox__input" className="checkbox__label" />
+        </div>
         {todo.isCompleted ? (
           <del className="todo__deleted-text">{todo.title}</del>
         ) : (
