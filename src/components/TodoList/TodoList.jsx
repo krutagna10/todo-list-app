@@ -7,13 +7,11 @@ function TodoList() {
   const { todos } = useContext(TodosContext);
 
   return (
-    <div className="todo">
-      <ul className="todo__list">
-        {todos.map((todo, index) => (
-          <TodoItem key={todo.id} todo={todo} index={index} />
-        ))}
-      </ul>
-    </div>
+    <ul className="todo__list">
+      {todos.map((todo, index) => (
+        <TodoItem key={todo.id} todo={todo} index={index} />
+      ))}
+    </ul>
   );
 }
 

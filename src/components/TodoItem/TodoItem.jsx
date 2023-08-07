@@ -16,12 +16,15 @@ function TodoItem({ todo, index }) {
         <div className="checkbox">
           <input
             type="checkbox"
-            id="checkbox__input"
-            className={`checkbox__input ${todo.isCompleted ? "checked" : ""}`}
+            id={`checkbox__input-${todo.id}`}
+            className={`checkbox__input`}
             onChange={handleIsCompletedChange}
-            // checked={todo.isCompleted}
+            checked={todo.isCompleted}
           />
-          <label htmlFor="checkbox__input" className="checkbox__label" />
+          <label
+            htmlFor={`checkbox__input-${todo.id}`}
+            className="checkbox__label"
+          />
         </div>
         {todo.isCompleted ? (
           <del className="todo__deleted-text">{todo.title}</del>
@@ -29,7 +32,7 @@ function TodoItem({ todo, index }) {
           <span>{todo.title}</span>
         )}
       </li>
-      {index < todos.length - 1 && <hr className="todo__horizontal-line" />}
+      <hr className="todo__horizontal-line" />
     </>
   );
 }

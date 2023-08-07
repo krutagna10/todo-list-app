@@ -1,16 +1,13 @@
 import TodoAdd from "./components/TodoAdd/TodoAdd.jsx";
 import TodosProvider from "./context/TodosProvider.jsx";
-import TodoList from "./components/TodoList/TodoList.jsx";
-import { useState } from "react";
+import Todos from "./components/Todos/Todos.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="app">
       <TodosProvider>
         <TodoAdd />
-        <TodoList />
+        <Todos />
       </TodosProvider>
     </div>
   );

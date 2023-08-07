@@ -1,0 +1,10 @@
+.todos {
+  background-color: var(--very-dark-desaturated-blue);
+  font-size: 18px;
+  border-radius: 0.5rem;
+}
+
+.todos__footer {
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+}

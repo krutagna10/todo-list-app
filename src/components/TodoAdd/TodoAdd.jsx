@@ -20,6 +20,7 @@ function TodoAdd() {
     event.preventDefault();
     onAddTodo(title, isCompleted);
     setTitle("");
+    setIsCompleted(false);
   }
 
   return (
@@ -27,11 +28,12 @@ function TodoAdd() {
       <div className="checkbox">
         <input
           type="checkbox"
-          id="checkbox__input"
+          id="checkbox__input-form"
           className="checkbox__input"
           onChange={handleIsCompletedChange}
+          checked={isCompleted === true}
         />
-        <label htmlFor="checkbox__input" className="checkbox__label" />
+        <label htmlFor="checkbox__input-form" className="checkbox__label" />
       </div>
       <input
         className="form__input"
