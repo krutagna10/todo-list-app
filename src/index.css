@@ -1,7 +1,5 @@
-@tailwind components;
-@tailwind utilities;
-
 :root {
+  /* Font Family */
   --font-josefin-sans: "Josefin Sans", sans-serif;
 
   /* Colors */
@@ -14,6 +12,10 @@
   --dark-grayish-blue: hsl(234, 11%, 52%);
   --very-dark-grayish-blue: hsl(233, 14%, 35%);
   --white: hsl(0, 0%, 100%);
+
+  /* Spacing */
+  --gap: 1rem;
+  --flow-space: 1rem;
 }
 
 *,
@@ -57,6 +59,10 @@ body {
   display: grid;
   place-content: center;
   background-color: var(--very-dark-blue);
+  /*background-image: url("./assets/bg-desktop-dark.jpg");*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: 100%;*/
+  /*background-position: center top;*/
 }
 
 /* Hiding animations */
@@ -86,4 +92,40 @@ body {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+/* Utility Classes */
+/* Flexbox Utility */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* Grid Utility */
+.grid {
+  display: grid;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+/* Gap Utility Class */
+.gap {
+  gap: var(--gap);
 }

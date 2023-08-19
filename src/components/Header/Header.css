@@ -1,0 +1,9 @@
+.header__heading {
+  letter-spacing: 7px;
+}
+
+.header__btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}

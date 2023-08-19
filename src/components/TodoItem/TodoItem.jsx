@@ -17,8 +17,8 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <li className="todo__item flex justify-between items-center gap-4">
-        <div className="flex gap-4">
+      <li className="todo__item flex justify-between items-center gap">
+        <div className="flex gap">
           <Checkbox
             id={todo.id}
             onChange={handleIsCompletedChange}

@@ -5,30 +5,30 @@ import "./Todos.css";
 import Button from "../UI/Button/Button.jsx";
 
 function Todos() {
-  const { todos } = useContext(TodosContext);
-  const [filterBy, setFilterBy] = useState("");
+  const { todos, onClearCompleted } = useContext(TodosContext);
+  const [currentFilter, setCurrentFilter] = useState("");
 
   function handleAllClick() {
-    setFilterBy("");
+    setCurrentFilter("");
   }
 
   function handleActiveClick() {
-    setFilterBy("active");
+    setCurrentFilter("active");
   }
 
   function handleIsCompletedClick() {
-    setFilterBy("completed");
+    setCurrentFilter("completed");
   }
 
   let filteredTodos = [...todos];
 
-  if (filterBy === "active") {
+  if (currentFilter === "active") {
     filteredTodos = todos.filter((todo) => {
       return !todo.isCompleted;
     });
   }
 
-  if (filterBy === "completed") {
+  if (currentFilter === "completed") {
     filteredTodos = todos.filter((todo) => {
       return todo.isCompleted;
     });
@@ -37,29 +37,29 @@ function Todos() {
   return (
     <div className="todos">
       <TodoList todos={filteredTodos} />
-      <div className="todos__footer flex gap-6 justify-between">
-        <p>{todos.length} items left</p>
-        <div className="flex gap-2">
+      <div className="todos__footer flex gap justify-between">
+        <p className="todos__items-left">{todos.length} items left</p>
+        <div className="flex gap">
           <Button
-            className={`${filterBy === "" ? "active" : ""}`}
+            className={`${currentFilter === "" ? "selected" : ""}`}
             onClick={handleAllClick}
           >
             All
           </Button>
           <Button
-            className={`${filterBy === "active" ? "active" : ""}`}
+            className={`${currentFilter === "active" ? "selected" : ""}`}
             onClick={handleActiveClick}
           >
             Active
           </Button>
           <Button
-            className={`${filterBy === "completed" ? "active" : ""}`}
+            className={`${currentFilter === "completed" ? "selected" : ""}`}
             onClick={handleIsCompletedClick}
           >
             Completed
           </Button>
         </div>
-        <Button>Clear Completed</Button>
+        <Button onClick={onClearCompleted}>Clear Completed</Button>
       </div>
     </div>
   );

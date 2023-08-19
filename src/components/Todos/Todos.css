@@ -4,6 +4,11 @@
   border-radius: 0.5rem;
 }
 
+.todos__items-left {
+  color: var(--very-dark-grayish-blue);
+  font-size: 1rem;
+}
+
 .todos__footer {
   padding-block: 1.5rem;
   padding-inline: 1.5rem;

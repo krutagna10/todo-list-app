@@ -24,7 +24,7 @@ function TodoAdd() {
   }
 
   return (
-    <form className="form flex items-center gap-4" onSubmit={handleSubmit}>
+    <form className="form flex items-center gap" onSubmit={handleSubmit}>
       <Checkbox
         id={crypto.randomUUID()}
         checked={isCompleted}
