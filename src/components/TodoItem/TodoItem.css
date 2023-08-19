@@ -10,3 +10,9 @@
 .todo__deleted-text {
   color: var(--very-dark-grayish-blue);
 }
+
+.todo__delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

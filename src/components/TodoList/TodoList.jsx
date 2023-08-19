@@ -3,9 +3,7 @@ import TodoItem from "../TodoItem/TodoItem.jsx";
 import { useContext } from "react";
 import "./TodoList.css";
 
-function TodoList() {
-  const { todos } = useContext(TodosContext);
-
+function TodoList({ todos }) {
   return (
     <ul className="todo__list">
       {todos.map((todo, index) => (

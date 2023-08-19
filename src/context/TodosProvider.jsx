@@ -1,6 +1,6 @@
 import TodosContext from "./TodosContext.jsx";
 import { useEffect, useReducer } from "react";
-import INITIAL_TODOS from "../data";
+import INITIAL_TODOS from "./data.js";
 
 function reducer(todos, action) {
   switch (action.type) {

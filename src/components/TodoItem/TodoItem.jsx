@@ -1,36 +1,40 @@
-import "./TodoItem.css";
 import { useContext, useState } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
+import Checkbox from "../Checkbox/Checkbox.jsx";
+import deleteIcon from "../../assets/icon-cross.svg";
+import "./TodoItem.css";
 
-function TodoItem({ todo, index }) {
-  const { todos, onEditTodo } = useContext(TodosContext);
+function TodoItem({ todo }) {
+  const { onEditTodo, onDeleteTodo } = useContext(TodosContext);
 
   function handleIsCompletedChange(event) {
-    console.log("Todo Checkbox in TodoItem.js has been edited");
     onEditTodo({ ...todo, isCompleted: event.target.checked });
+  }
+
+  function handleDeleteTodo() {
+    onDeleteTodo(todo.id);
   }
 
   return (
     <>
-      <li className="todo__item flex items-center gap-4">
-        <div className="checkbox">
-          <input
-            type="checkbox"
-            id={`checkbox__input-${todo.id}`}
-            className={`checkbox__input`}
+      <li className="todo__item flex justify-between items-center gap-4">
+        <div className="flex gap-4">
+          <Checkbox
+            id={todo.id}
             onChange={handleIsCompletedChange}
             checked={todo.isCompleted}
           />
-          <label
-            htmlFor={`checkbox__input-${todo.id}`}
-            className="checkbox__label"
-          />
+          {todo.isCompleted ? (
+            <del className="todo__deleted-text">{todo.title}</del>
+          ) : (
+            <span>{todo.title}</span>
+          )}
         </div>
-        {todo.isCompleted ? (
-          <del className="todo__deleted-text">{todo.title}</del>
-        ) : (
-          <span>{todo.title}</span>
-        )}
+        <div>
+          <button className="todo__delete-btn" onClick={handleDeleteTodo}>
+            <img src={deleteIcon} alt="" />
+          </button>
+        </div>
       </li>
       <hr className="todo__horizontal-line" />
     </>

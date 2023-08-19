@@ -8,6 +8,10 @@
   transition: all 0.3s ease;
 }
 
+.btn.active {
+  color: white;
+}
+
 .btn:hover {
   color: var(--white);
 }
