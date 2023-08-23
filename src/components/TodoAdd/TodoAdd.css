@@ -1,7 +1,6 @@
 .form__input {
   color: var(--white);
   width: 100%;
-  font-size: 18px;
   background-color: transparent;
   padding: 0.25rem;
   border: none;
@@ -16,7 +15,7 @@
   background-color: var(--very-dark-desaturated-blue);
   border: none;
   border-radius: 0.25rem;
-  margin-block: 2rem;
+  margin-block: clamp(1.75rem, 5vw, 2.25rem);
 }
 
 .form__input::placeholder {

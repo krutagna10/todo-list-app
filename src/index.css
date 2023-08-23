@@ -13,9 +13,22 @@
   --very-dark-grayish-blue: hsl(233, 14%, 35%);
   --white: hsl(0, 0%, 100%);
 
+  /* Text Sizes */
+  --text-300: 32px;
+  --text-200: 16px;
+  --text-100: 15px;
+
   /* Spacing */
   --gap: 1rem;
   --flow-space: 1rem;
+}
+
+@media (min-width: 32em) {
+  :root {
+    --text-300: 40px;
+    --text-200: 18px;
+    --text-100: 16px;
+  }
 }
 
 *,
@@ -59,10 +72,6 @@ body {
   display: grid;
   place-content: center;
   background-color: var(--very-dark-blue);
-  /*background-image: url("./assets/bg-desktop-dark.jpg");*/
-  /*background-repeat: no-repeat;*/
-  /*background-size: 100%;*/
-  /*background-position: center top;*/
 }
 
 /* Hiding animations */
@@ -128,4 +137,17 @@ body {
 /* Gap Utility Class */
 .gap {
   gap: var(--gap);
+}
+
+/* Font Sizes */
+.text-300 {
+  font-size: var(--text-300);
+}
+
+.text-200 {
+  font-size: var(--text-200);
+}
+
+.text-100 {
+  font-size: var(--text-100);
 }

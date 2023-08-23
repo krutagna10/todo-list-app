@@ -1,12 +1,10 @@
 .todos {
   background-color: var(--very-dark-desaturated-blue);
-  font-size: 18px;
   border-radius: 0.5rem;
 }
 
 .todos__items-left {
   color: var(--very-dark-grayish-blue);
-  font-size: 1rem;
 }
 
 .todos__footer {

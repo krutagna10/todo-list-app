@@ -25,9 +25,9 @@ function TodoItem({ todo }) {
             checked={todo.isCompleted}
           />
           {todo.isCompleted ? (
-            <del className="todo__deleted-text">{todo.title}</del>
+            <del className="text-200 todo__deleted-text">{todo.title}</del>
           ) : (
-            <span>{todo.title}</span>
+            <span className="text-200">{todo.title}</span>
           )}
         </div>
         <div>

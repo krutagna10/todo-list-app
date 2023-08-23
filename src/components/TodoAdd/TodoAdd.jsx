@@ -2,6 +2,7 @@ import TodosContext from "../../context/TodosContext.jsx";
 import { useContext, useState } from "react";
 import "./TodoAdd.css";
 import Checkbox from "../Checkbox/Checkbox.jsx";
+import Container from "../UI/Container/Container.jsx";
 
 function TodoAdd() {
   const { onAddTodo } = useContext(TodosContext);
@@ -24,21 +25,23 @@ function TodoAdd() {
   }
 
   return (
-    <form className="form flex items-center gap" onSubmit={handleSubmit}>
-      <Checkbox
-        id={crypto.randomUUID()}
-        checked={isCompleted}
-        onChange={handleIsCompletedChange}
-      />
-      <input
-        className="form__input"
-        type="text"
-        placeholder="Create a new todo..."
-        onChange={handleTitleChange}
-        value={title}
-        required
-      />
-    </form>
+    <Container>
+      <form className="form flex items-center gap" onSubmit={handleSubmit}>
+        <Checkbox
+          id={crypto.randomUUID()}
+          checked={isCompleted}
+          onChange={handleIsCompletedChange}
+        />
+        <input
+          className="form__input text-200"
+          type="text"
+          placeholder="Create a new todo..."
+          onChange={handleTitleChange}
+          value={title}
+          required
+        />
+      </form>
+    </Container>
   );
 }
 

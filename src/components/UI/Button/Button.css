@@ -1,7 +1,6 @@
 .btn {
   background: transparent;
   border: none;
-  font-size: 16px !important;
   cursor: pointer;
   color: var(--very-dark-grayish-blue);
   white-space: nowrap;

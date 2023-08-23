@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
 import "./Todos.css";
 import Button from "../UI/Button/Button.jsx";
+import Container from "../UI/Container/Container.jsx";
 
 function Todos() {
   const { todos, onClearCompleted } = useContext(TodosContext);
@@ -35,10 +36,10 @@ function Todos() {
   }
 
   return (
-    <div className="todos">
+    <Container className="todos">
       <TodoList todos={filteredTodos} />
       <div className="todos__footer flex gap justify-between">
-        <p className="todos__items-left">{todos.length} items left</p>
+        <p className="todos__items-left text-100">{todos.length} items left</p>
         <div className="flex gap">
           <Button
             className={`${currentFilter === "" ? "selected" : ""}`}
@@ -61,7 +62,7 @@ function Todos() {
         </div>
         <Button onClick={onClearCompleted}>Clear Completed</Button>
       </div>
-    </div>
+    </Container>
   );
 }
 
