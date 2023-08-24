@@ -1,0 +1,31 @@
+.todos-section {
+  padding-top: clamp(3rem, 10vw, 5rem);
+  position: relative;
+}
+
+.todos-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 20rem;
+  background-image: url("./assets/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+@media (min-width: 48em) {
+  .todos-section::before {
+    background-image: url("./assets/bg-desktop-light.jpg");
+  }
+}
+
+.dark-theme .todos-section::before {
+  background-image: url("./assets/bg-mobile-dark.jpg");
+}
+
+@media (min-width: 48em) {
+  .dark-theme .todos-section::before {
+    background-image: url("./assets/bg-desktop-dark.jpg");
+  }
+}

@@ -1,0 +1,11 @@
+.todos__summary {
+  background-color: var(--clr-card);
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+  border-bottom-left-radius: var(--border-radius-100);
+  border-bottom-right-radius: var(--border-radius-100);
+}
+
+.todos__summary > p {
+  color: var(--clr-text-secondary);
+}

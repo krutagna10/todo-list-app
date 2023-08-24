@@ -90,26 +90,6 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   position: relative;
-  background-image: url("./assets/bg-mobile-light.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: top center;
-}
-
-@media (min-width: 48em) {
-  body {
-    background-image: url("./assets/bg-desktop-light.jpg");
-  }
-}
-
-.dark-theme body {
-  background-image: url("./assets/bg-mobile-dark.jpg");
-}
-
-@media (min-width: 48em) {
-  .dark-theme body {
-    background-image: url("./assets/bg-desktop-dark.jpg");
-  }
 }
 
 /* Hiding animations */
