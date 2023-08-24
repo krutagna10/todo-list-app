@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="app">
       <TodosProvider>
+        <h1 className="visually-hidden">Todo List</h1>
         <Header theme={theme} onToggleTheme={handleToggleTheme} />
         <TodoAdd />
         <Todos />

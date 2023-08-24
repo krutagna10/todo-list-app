@@ -7,11 +7,11 @@
 
 .todo__horizontal-line {
   height: 1px;
-  opacity: 0.25;
+  opacity: 0.175;
 }
 
 .todo__deleted-text {
-  color: var(--very-dark-grayish-blue);
+  color: var(--clr-deleted-text);
 }
 
 .todo__delete-btn {

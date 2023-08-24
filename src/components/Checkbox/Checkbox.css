@@ -8,7 +8,7 @@
   display: block;
   width: clamp(1rem, 4vw, 1.75rem);
   height: clamp(1rem, 4vw, 1.75rem);
-  border: 1px solid var(--dark-grayish-blue);
+  border: 1px solid var(--clr-checkbox-border);
   border-radius: 50%;
   cursor: pointer;
   position: relative;

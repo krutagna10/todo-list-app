@@ -8,11 +8,6 @@
   background-color: var(--clr-card);
   padding-block: 1.5rem;
   padding-inline: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.todos__filter-mobile > div:nth-child(1) {
-  border-top: 0;
 }
 
 .todos__filter-mobile > div:nth-child(2) {

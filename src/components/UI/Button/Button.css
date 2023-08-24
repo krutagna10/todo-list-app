@@ -2,7 +2,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--very-dark-grayish-blue);
+  color: var(--clr-text-secondary);
   white-space: nowrap;
   transition: all 0.3s ease;
   font-weight: 700;

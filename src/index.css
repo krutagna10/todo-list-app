@@ -3,42 +3,39 @@
   --font-josefin-sans: "Josefin Sans", sans-serif;
 
   /* Colors */
-  --clr-checkbox-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  --clr-body-bg: #f2f2f2;
-  --clr-text: hsl(235, 24%, 19%);
+  --clr-body-bg: hsl(0, 0%, 95%);
+  --clr-text-primary: hsl(235, 24%, 19%);
+  --clr-text-secondary: hsl(234, 11%, 52%);
+  --clr-deleted-text: hsl(234, 39%, 85%);
   --clr-card: hsl(0, 0%, 100%);
+  --clr-checkbox-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --clr-checkbox-border: hsl(234, 11%, 52%);
   --clr-active: hsl(220, 98%, 61%);
-  --clr-hover: red;
+  --clr-hover: hsl(233, 14%, 35%);
   --clr-icon: hsl(235, 24%, 19%);
-  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  --light-grayish-blue-1: hsl(234, 39%, 85%);
-  --light-grayish-blue-2: hsl(236, 33%, 92%);
-  --dark-grayish-blue: hsl(234, 11%, 52%);
-  --very-dark-grayish-blue: hsl(233, 14%, 35%);
-  --white: hsl(0, 0%, 100%);
 
   /* Text Sizes */
   --text-300: 2rem;
   --text-200: 1rem;
-  --text-100: 15px;
+  --text-100: 0.9375rem;
 
   /* Spacing */
   --gap-100: clamp(0.75rem, 3vw, 1rem);
-
   --flow-space: 1rem;
 }
 
 @media (min-width: 32em) {
   :root {
-    --text-300: 40px;
-    --text-200: 18px;
-    --text-100: 16px;
+    --text-300: 2.5rem;
+    --text-200: 1.125rem;
+    --text-100: 1rem;
   }
 }
 
 .dark-theme {
   --clr-body-bg: hsl(235, 21%, 11%);
-  --clr-text: hsl(0, 0%, 100%);
+  --clr-text-primary: hsl(0, 0%, 100%);
+  --clr-deleted-text: hsl(233, 14%, 35%);
   --clr-card: hsl(235, 24%, 19%);
   --clr-hover: hsl(0, 0%, 100%);
   --clr-icon: hsl(0, 0%, 100%);
@@ -77,7 +74,7 @@ html {
 body {
   font-family: var(--font-josefin-sans);
   background-color: var(--clr-body-bg);
-  color: var(--clr-text);
+  color: var(--clr-text-primary);
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
