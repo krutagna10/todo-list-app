@@ -1,15 +1,15 @@
 import TodoList from "../TodoList/TodoList.jsx";
-import { useContext, useReducer, useState, useSyncExternalStore } from "react";
+import { useContext, useReducer } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
 import "./Todos.css";
-import Button from "../UI/Button/Button.jsx";
 import Container from "../UI/Container/Container.jsx";
-import TodosFilterMobile from "../TodosFilterMobile/TodosFilterMobile.jsx";
-import TodosFilterDesktop from "../TodosFilterDesktop/TodosFilterDesktop.jsx";
+import TodosFilter from "../TodosFilter/TodosFilter.jsx";
+import TodosSummary from "../TodosSummary/TodosSummary.jsx";
 
 const INITIAL_STATE = {
   filter: "",
 };
+
 function reducer(state, action) {
   switch (action.type) {
     case "set-filter-all": {
@@ -61,18 +61,16 @@ function Todos() {
     });
   }
 
-  const props = {
-    currentFilter: state.filter,
-    onShowAllClick: handleShowAllClick,
-    onShowActiveClick: handleShowActiveClick,
-    onShowCompletedClick: handleShowCompletedClick,
-  };
-
   return (
     <Container className="todos">
       <TodoList todos={filteredTodos} />
-      <TodosFilterDesktop {...props} />
-      <TodosFilterMobile {...props} />
+      <TodosSummary />
+      <TodosFilter
+        currentFilter={state.filter}
+        onShowAllClick={handleShowAllClick}
+        onShowActiveClick={handleShowActiveClick}
+        onShowCompletedClick={handleShowCompletedClick}
+      />
     </Container>
   );
 }

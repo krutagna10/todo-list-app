@@ -1,7 +1,7 @@
 .form {
   padding: 1.25rem;
   background-color: var(--clr-card);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius-100);
   margin-block: clamp(1.75rem, 5vw, 2.25rem);
 }
 

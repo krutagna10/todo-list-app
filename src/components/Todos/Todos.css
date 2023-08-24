@@ -1,7 +1,3 @@
 .todos {
   border-radius: 0.5rem;
 }
-
-.todos__items-left {
-  color: var(--clr-text-secondary);
-}

@@ -1,6 +1,7 @@
 import Button from "../UI/Button/Button.jsx";
+import "./TodosFilter.css";
 
-function FilterButtons({
+function TodosFilter({
   currentFilter,
   onShowAllClick,
   onShowActiveClick,
@@ -24,15 +25,19 @@ function FilterButtons({
     },
   ];
 
-  return filters.map((filter, index) => (
-    <Button
-      key={index}
-      className={`${currentFilter === filter.status ? "selected" : ""}`}
-      onClick={filter.onClick}
-    >
-      {filter.text}
-    </Button>
-  ));
+  return (
+    <div className="todos__filter flex justify-center gap-200">
+      {filters.map((filter, index) => (
+        <Button
+          key={index}
+          className={`${currentFilter === filter.status ? "selected" : ""}`}
+          onClick={filter.onClick}
+        >
+          {filter.text}
+        </Button>
+      ))}
+    </div>
+  );
 }
 
-export default FilterButtons;
+export default TodosFilter;

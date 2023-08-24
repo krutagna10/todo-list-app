@@ -1,0 +1,7 @@
+.todos__filter {
+  background-color: var(--clr-card);
+  border-radius: var(--border-radius-100);
+  margin-top: 2rem;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+}

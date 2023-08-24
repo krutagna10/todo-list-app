@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import TodoAdd from "./components/TodoAdd/TodoAdd.jsx";
 import TodosProvider from "./context/TodosProvider.jsx";
 import Todos from "./components/Todos/Todos.jsx";
 import Header from "./components/Header/Header.jsx";
-import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
   const [theme, setTheme] = useState("dark-theme");
@@ -18,14 +19,16 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <TodosProvider>
-        <h1 className="visually-hidden">Todo List</h1>
-        <Header theme={theme} onToggleTheme={handleToggleTheme} />
-        <TodoAdd />
-        <Todos />
-      </TodosProvider>
-    </div>
+    <main>
+      <section className="todos-section">
+        <TodosProvider>
+          <h1 className="visually-hidden">Todo List</h1>
+          <Header theme={theme} onToggleTheme={handleToggleTheme} />
+          <TodoAdd />
+          <Todos />
+        </TodosProvider>
+      </section>
+    </main>
   );
 }
 

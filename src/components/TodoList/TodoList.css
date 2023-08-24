@@ -1,4 +1,5 @@
 .todos__list {
   background-color: var(--clr-card);
-  list-style: none;
+  border-top-left-radius: var(--border-radius-100);
+  border-top-right-radius: var(--border-radius-100);
 }

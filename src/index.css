@@ -6,6 +6,7 @@
   --clr-body-bg: hsl(0, 0%, 95%);
   --clr-text-primary: hsl(235, 24%, 19%);
   --clr-text-secondary: hsl(234, 11%, 52%);
+  --clr-title: hsl(0, 0%, 95%);
   --clr-deleted-text: hsl(234, 39%, 85%);
   --clr-card: hsl(0, 0%, 100%);
   --clr-checkbox-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -21,7 +22,11 @@
 
   /* Spacing */
   --gap-100: clamp(0.75rem, 3vw, 1rem);
+  --gap-200: clamp(1rem, 4vw, 2rem);
   --flow-space: 1rem;
+
+  /* Border-Radius  */
+  --border-radius-100: 0.5rem;
 }
 
 @media (min-width: 32em) {
@@ -66,6 +71,11 @@ h3 {
   line-height: 1.2;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 html {
   width: 100%;
   overflow-x: hidden;
@@ -80,8 +90,26 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   position: relative;
-  display: grid;
-  place-content: center;
+  background-image: url("./assets/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+}
+
+@media (min-width: 48em) {
+  body {
+    background-image: url("./assets/bg-desktop-light.jpg");
+  }
+}
+
+.dark-theme body {
+  background-image: url("./assets/bg-mobile-dark.jpg");
+}
+
+@media (min-width: 48em) {
+  .dark-theme body {
+    background-image: url("./assets/bg-desktop-dark.jpg");
+  }
 }
 
 /* Hiding animations */
@@ -147,6 +175,10 @@ body {
 /* Gap Utility Class */
 .gap-100 {
   gap: var(--gap-100);
+}
+
+.gap-200 {
+  gap: var(--gap-200);
 }
 
 /* Font Sizes */
