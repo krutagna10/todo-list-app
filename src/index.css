@@ -3,9 +3,13 @@
   --font-josefin-sans: "Josefin Sans", sans-serif;
 
   /* Colors */
-  --bright-blue: hsl(220, 98%, 61%);
-  --light-violet: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  --very-dark-blue: hsl(235, 21%, 11%);
+  --clr-checkbox-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --clr-body-bg: #f2f2f2;
+  --clr-text: hsl(235, 24%, 19%);
+  --clr-card: hsl(0, 0%, 100%);
+  --clr-active: hsl(220, 98%, 61%);
+  --clr-hover: red;
+  --clr-icon: hsl(235, 24%, 19%);
   --very-dark-desaturated-blue: hsl(235, 24%, 19%);
   --light-grayish-blue-1: hsl(234, 39%, 85%);
   --light-grayish-blue-2: hsl(236, 33%, 92%);
@@ -14,12 +18,13 @@
   --white: hsl(0, 0%, 100%);
 
   /* Text Sizes */
-  --text-300: 32px;
-  --text-200: 16px;
+  --text-300: 2rem;
+  --text-200: 1rem;
   --text-100: 15px;
 
   /* Spacing */
-  --gap: 1rem;
+  --gap-100: clamp(0.75rem, 3vw, 1rem);
+
   --flow-space: 1rem;
 }
 
@@ -29,6 +34,14 @@
     --text-200: 18px;
     --text-100: 16px;
   }
+}
+
+.dark-theme {
+  --clr-body-bg: hsl(235, 21%, 11%);
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-card: hsl(235, 24%, 19%);
+  --clr-hover: hsl(0, 0%, 100%);
+  --clr-icon: hsl(0, 0%, 100%);
 }
 
 *,
@@ -63,7 +76,8 @@ html {
 
 body {
   font-family: var(--font-josefin-sans);
-  color: white;
+  background-color: var(--clr-body-bg);
+  color: var(--clr-text);
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -71,7 +85,6 @@ body {
   position: relative;
   display: grid;
   place-content: center;
-  background-color: var(--very-dark-blue);
 }
 
 /* Hiding animations */
@@ -135,8 +148,8 @@ body {
 }
 
 /* Gap Utility Class */
-.gap {
-  gap: var(--gap);
+.gap-100 {
+  gap: var(--gap-100);
 }
 
 /* Font Sizes */

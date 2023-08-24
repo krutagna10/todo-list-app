@@ -1,27 +1,53 @@
 import TodoList from "../TodoList/TodoList.jsx";
-import { useContext, useState } from "react";
+import { useContext, useReducer, useState, useSyncExternalStore } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
 import "./Todos.css";
 import Button from "../UI/Button/Button.jsx";
 import Container from "../UI/Container/Container.jsx";
+import TodosFilterMobile from "../TodosFilterMobile/TodosFilterMobile.jsx";
+import TodosFilterDesktop from "../TodosFilterDesktop/TodosFilterDesktop.jsx";
+
+const INITIAL_STATE = {
+  filter: "",
+};
+function reducer(state, action) {
+  switch (action.type) {
+    case "set-filter-all": {
+      return { filter: "" };
+    }
+    case "set-filter-active": {
+      return { filter: "active" };
+    }
+    case "set-filter-completed": {
+      return { filter: "completed" };
+    }
+    default: {
+      throw new Error("Invalid action");
+    }
+  }
+}
 
 function Todos() {
-  const { todos, onClearCompleted } = useContext(TodosContext);
-  const [currentFilter, setCurrentFilter] = useState("");
+  const { todos } = useContext(TodosContext);
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
-  function handleAllClick() {
-    setCurrentFilter("");
+  function handleShowAllClick() {
+    dispatch({ type: "set-filter-all" });
   }
 
-  function handleActiveClick() {
-    setCurrentFilter("active");
+  function handleShowActiveClick() {
+    console.log("clicked");
+    dispatch({ type: "set-filter-active" });
   }
 
-  function handleIsCompletedClick() {
-    setCurrentFilter("completed");
+  function handleShowCompletedClick() {
+    dispatch({ type: "set-filter-completed" });
   }
 
   let filteredTodos = [...todos];
+  let currentFilter = state.filter;
+
+  console.log(currentFilter);
 
   if (currentFilter === "active") {
     filteredTodos = todos.filter((todo) => {
@@ -35,33 +61,18 @@ function Todos() {
     });
   }
 
+  const props = {
+    currentFilter: state.filter,
+    onShowAllClick: handleShowAllClick,
+    onShowActiveClick: handleShowActiveClick,
+    onShowCompletedClick: handleShowCompletedClick,
+  };
+
   return (
     <Container className="todos">
       <TodoList todos={filteredTodos} />
-      <div className="todos__footer flex gap justify-between">
-        <p className="todos__items-left text-100">{todos.length} items left</p>
-        <div className="flex gap">
-          <Button
-            className={`${currentFilter === "" ? "selected" : ""}`}
-            onClick={handleAllClick}
-          >
-            All
-          </Button>
-          <Button
-            className={`${currentFilter === "active" ? "selected" : ""}`}
-            onClick={handleActiveClick}
-          >
-            Active
-          </Button>
-          <Button
-            className={`${currentFilter === "completed" ? "selected" : ""}`}
-            onClick={handleIsCompletedClick}
-          >
-            Completed
-          </Button>
-        </div>
-        <Button onClick={onClearCompleted}>Clear Completed</Button>
-      </div>
+      <TodosFilterDesktop {...props} />
+      <TodosFilterMobile {...props} />
     </Container>
   );
 }

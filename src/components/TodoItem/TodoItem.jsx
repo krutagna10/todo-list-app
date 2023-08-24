@@ -17,24 +17,22 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <li className="todo__item flex justify-between items-center gap">
-        <div className="flex gap">
+      <li className="todo flex justify-between items-center gap-100">
+        <div className="flex gap-100">
           <Checkbox
             id={todo.id}
             onChange={handleIsCompletedChange}
             checked={todo.isCompleted}
           />
           {todo.isCompleted ? (
-            <del className="text-200 todo__deleted-text">{todo.title}</del>
+            <del className="todo__deleted-text text-200">{todo.title}</del>
           ) : (
             <span className="text-200">{todo.title}</span>
           )}
         </div>
-        <div>
-          <button className="todo__delete-btn" onClick={handleDeleteTodo}>
-            <img src={deleteIcon} alt="" />
-          </button>
-        </div>
+        <button className="todo__delete-btn" onClick={handleDeleteTodo}>
+          <img src={deleteIcon} alt="" />
+        </button>
       </li>
       <hr className="todo__horizontal-line" />
     </>

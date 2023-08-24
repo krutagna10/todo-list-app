@@ -5,12 +5,13 @@
   color: var(--very-dark-grayish-blue);
   white-space: nowrap;
   transition: all 0.3s ease;
+  font-weight: 700;
 }
 
 .btn.selected {
-  color: white;
+  color: var(--clr-active);
 }
 
 .btn:hover {
-  color: var(--white);
+  color: var(--clr-hover);
 }

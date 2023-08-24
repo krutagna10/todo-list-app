@@ -1,10 +1,13 @@
-.todo__item {
-  padding: 2rem;
+.todo {
+  /*border: 1px solid red;*/
+  padding-inline: clamp(0.75rem, 3vw, 2rem);
+  padding-block: 2rem;
+  word-break: break-all;
 }
 
 .todo__horizontal-line {
   height: 1px;
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .todo__deleted-text {

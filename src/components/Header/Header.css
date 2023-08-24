@@ -1,4 +1,4 @@
-.header__heading {
+.header__title {
   letter-spacing: 7px;
 }
 
@@ -6,4 +6,9 @@
   background-color: transparent;
   cursor: pointer;
   border: none;
+}
+
+.header__icon {
+  color: var(--clr-icon);
+  font-size: 2rem;
 }

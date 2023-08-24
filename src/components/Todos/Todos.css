@@ -1,13 +1,7 @@
 .todos {
-  background-color: var(--very-dark-desaturated-blue);
   border-radius: 0.5rem;
 }
 
 .todos__items-left {
   color: var(--very-dark-grayish-blue);
-}
-
-.todos__footer {
-  padding-block: 1.5rem;
-  padding-inline: 1.5rem;
 }

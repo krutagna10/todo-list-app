@@ -6,12 +6,16 @@
 
 .checkbox__label {
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: clamp(1rem, 4vw, 1.75rem);
+  height: clamp(1rem, 4vw, 1.75rem);
   border: 1px solid var(--dark-grayish-blue);
   border-radius: 50%;
   cursor: pointer;
   position: relative;
+}
+
+.checkbox__input:checked + .checkbox__label {
+  border: none;
 }
 
 .checkbox__input:checked + .checkbox__label::before,
@@ -31,5 +35,5 @@
 }
 
 .checkbox__input:checked + .checkbox__label::after {
-  background: var(--light-violet);
+  background: var(--clr-checkbox-bg);
 }
