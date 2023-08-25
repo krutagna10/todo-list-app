@@ -1,17 +1,28 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
 import Checkbox from "../Checkbox/Checkbox.jsx";
 import deleteIcon from "../../assets/icon-cross.svg";
 import "./TodoItem.css";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
-function TodoItem({ todo }) {
+function TodoItem({ id, todo }) {
   const { onEditTodo, onDeleteTodo } = useContext(TodosContext);
+
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
 
   function handleIsCompletedChange(event) {
     onEditTodo({ ...todo, isCompleted: event.target.checked });
   }
 
   function handleDeleteTodo() {
+    console.log("Button Clicked");
     onDeleteTodo(todo.id);
   }
 
@@ -24,14 +35,20 @@ function TodoItem({ todo }) {
             onChange={handleIsCompletedChange}
             checked={todo.isCompleted}
           />
-          {todo.isCompleted ? (
-            <del className="todo__deleted-text text-200">{todo.title}</del>
-          ) : (
-            <span className="text-200">{todo.title}</span>
-          )}
+          <p
+            className={`todo__text fs-200 ${
+              todo.isCompleted ? "todo__text--deleted" : ""
+            }`}
+            style={style}
+            ref={setNodeRef}
+            {...attributes}
+            {...listeners}
+          >
+            {todo.title}
+          </p>
         </div>
-        <button className="todo__delete-btn" onClick={handleDeleteTodo}>
-          <img src={deleteIcon} alt="" />
+        <button className="todo__btn-delete" onClick={handleDeleteTodo}>
+          <img src={deleteIcon} alt="" data-no-dnd="true" />
         </button>
       </li>
       <hr className="todo__horizontal-line" />

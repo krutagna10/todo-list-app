@@ -45,17 +45,14 @@ function Todos() {
   }
 
   let filteredTodos = [...todos];
-  let currentFilter = state.filter;
 
-  console.log(currentFilter);
-
-  if (currentFilter === "active") {
+  if (state.filter === "active") {
     filteredTodos = todos.filter((todo) => {
       return !todo.isCompleted;
     });
   }
 
-  if (currentFilter === "completed") {
+  if (state.filter === "completed") {
     filteredTodos = todos.filter((todo) => {
       return todo.isCompleted;
     });

@@ -3,7 +3,7 @@ import "./Button.css";
 function Button({ children, className, onClick }) {
   return (
     <button
-      className={`btn text-100 ${className ? className : ""}`}
+      className={`btn fs-100 ${className ? className : ""}`}
       onClick={onClick}
     >
       {children}

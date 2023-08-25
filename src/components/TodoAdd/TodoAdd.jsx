@@ -33,7 +33,7 @@ function TodoAdd() {
           onChange={handleIsCompletedChange}
         />
         <input
-          className="form__input text-200"
+          className="form__input fs-200"
           type="text"
           placeholder="Create a new todo..."
           onChange={handleTitleChange}

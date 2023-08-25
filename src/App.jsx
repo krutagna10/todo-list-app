@@ -20,14 +20,14 @@ function App() {
 
   return (
     <main>
-      <section className="todos-section">
-        <TodosProvider>
+      <TodosProvider>
+        <section className="todos-section">
           <h1 className="visually-hidden">Todo List</h1>
           <Header theme={theme} onToggleTheme={handleToggleTheme} />
           <TodoAdd />
           <Todos />
-        </TodosProvider>
-      </section>
+        </section>
+      </TodosProvider>
     </main>
   );
 }

@@ -5,6 +5,7 @@ const TodosContext = createContext({
   onAddTodo: (title, isCompleted) => {},
   onEditTodo: (editedTodo) => {},
   onDeleteTodo: (deleteId) => {},
+  onDragEnd: (event) => {},
   onClearCompleted: () => {},
 });
 

@@ -1,5 +1,6 @@
 import TodosContext from "./TodosContext.jsx";
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
+import { arrayMove } from "@dnd-kit/sortable";
 import INITIAL_TODOS from "./data.js";
 
 function reducer(todos, action) {
@@ -21,6 +22,9 @@ function reducer(todos, action) {
       return todos.filter((todo) => {
         return action.deleteId !== todo.id;
       });
+    }
+    case "drag-todos": {
+      return arrayMove(todos, action.activeIndex, action.overIndex);
     }
     case "clear-completed": {
       return todos.filter((todo) => {
@@ -48,6 +52,14 @@ function TodosProvider({ children }) {
     dispatch({ type: "delete-todo", deleteId: deleteId });
   }
 
+  function handleDragEnd(activeIndex, overIndex) {
+    dispatch({
+      type: "drag-todos",
+      activeIndex: activeIndex,
+      overIndex: overIndex,
+    });
+  }
+
   function handleClearCompleted() {
     dispatch({ type: "clear-completed" });
   }
@@ -58,6 +70,7 @@ function TodosProvider({ children }) {
     onEditTodo: handleEditTodo,
     onDeleteTodo: handleDeleteTodo,
     onClearCompleted: handleClearCompleted,
+    onDragEnd: handleDragEnd,
   };
 
   return (

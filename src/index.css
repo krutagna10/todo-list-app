@@ -16,9 +16,9 @@
   --clr-icon: hsl(235, 24%, 19%);
 
   /* Text Sizes */
-  --text-300: 2rem;
-  --text-200: 1rem;
-  --text-100: 0.9375rem;
+  --fs-300: 2rem;
+  --fs-200: 1rem;
+  --fs-100: 0.9375rem;
 
   /* Spacing */
   --gap-100: clamp(0.75rem, 3vw, 1rem);
@@ -31,9 +31,9 @@
 
 @media (min-width: 32em) {
   :root {
-    --text-300: 2.5rem;
-    --text-200: 1.125rem;
-    --text-100: 1rem;
+    --fs-300: 2.5rem;
+    --fs-200: 1.125rem;
+    --fs-100: 1rem;
   }
 }
 
@@ -122,6 +122,10 @@ body {
 }
 
 /* Utility Classes */
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
+
 /* Flexbox Utility */
 .flex {
   display: flex;
@@ -162,14 +166,14 @@ body {
 }
 
 /* Font Sizes */
-.text-300 {
-  font-size: var(--text-300);
+.fs-300 {
+  font-size: var(--fs-300);
 }
 
-.text-200 {
-  font-size: var(--text-200);
+.fs-200 {
+  font-size: var(--fs-200);
 }
 
-.text-100 {
-  font-size: var(--text-100);
+.fs-100 {
+  font-size: var(--fs-100);
 }

@@ -12,7 +12,7 @@ function TodosSummary() {
 
   return (
     <div className="todos__summary flex justify-between">
-      <p className="text-100">{itemsLeft} items left</p>
+      <p className="fs-100">{itemsLeft} items left</p>
       <Button onClick={onClearCompleted}>Clear Completed</Button>
     </div>
   );

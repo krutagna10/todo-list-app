@@ -1,5 +1,4 @@
 .todo {
-  /*border: 1px solid red;*/
   padding-inline: clamp(0.75rem, 3vw, 2rem);
   padding-block: 2rem;
   word-break: break-all;
@@ -10,11 +9,16 @@
   opacity: 0.175;
 }
 
-.todo__deleted-text {
-  color: var(--clr-deleted-text);
+.todo__text {
+  cursor: grabbing;
 }
 
-.todo__delete-btn {
+.todo__text--deleted {
+  color: var(--clr-deleted-text);
+  text-decoration: line-through;
+}
+
+.todo__btn-delete {
   background: transparent;
   border: none;
   cursor: pointer;
