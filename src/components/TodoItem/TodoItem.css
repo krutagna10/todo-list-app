@@ -4,13 +4,21 @@
   word-break: break-all;
 }
 
+.todo > div {
+  width: 100%;
+}
+
+.todo__text-wrapper {
+  width: 100%;
+}
+
 .todo__horizontal-line {
   height: 1px;
   opacity: 0.175;
 }
 
 .todo__text {
-  cursor: grabbing;
+  cursor: grab;
 }
 
 .todo__text--deleted {

@@ -68,6 +68,7 @@ function Todos() {
         onShowActiveClick={handleShowActiveClick}
         onShowCompletedClick={handleShowCompletedClick}
       />
+      <p className="text-center">Drag and drop to reorder list</p>
     </Container>
   );
 }

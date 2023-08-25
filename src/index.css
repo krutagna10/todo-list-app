@@ -177,3 +177,8 @@ body {
 .fs-100 {
   font-size: var(--fs-100);
 }
+
+/* Text Align Center */
+.text-center {
+  text-align: center;
+}

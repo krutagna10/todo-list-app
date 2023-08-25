@@ -1,3 +1,4 @@
-.todos {
-  border-radius: 0.5rem;
+.todos > p {
+  margin-top: 2rem;
+  color: var(--clr-text-secondary);
 }

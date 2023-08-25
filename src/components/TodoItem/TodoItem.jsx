@@ -28,24 +28,28 @@ function TodoItem({ id, todo }) {
 
   return (
     <>
-      <li className="todo flex justify-between items-center gap-100">
+      <li className="todo flex items-center gap-100">
         <div className="flex gap-100">
           <Checkbox
             id={todo.id}
             onChange={handleIsCompletedChange}
             checked={todo.isCompleted}
           />
-          <p
-            className={`todo__text fs-200 ${
-              todo.isCompleted ? "todo__text--deleted" : ""
-            }`}
+          <div
+            className="todo__text-wrapper"
             style={style}
             ref={setNodeRef}
             {...attributes}
             {...listeners}
           >
-            {todo.title}
-          </p>
+            <p
+              className={`todo__text fs-200 ${
+                todo.isCompleted ? "todo__text--deleted" : ""
+              }`}
+            >
+              {todo.title}
+            </p>
+          </div>
         </div>
         <button className="todo__btn-delete" onClick={handleDeleteTodo}>
           <img src={deleteIcon} alt="" data-no-dnd="true" />
