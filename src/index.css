@@ -28,9 +28,6 @@
   --spacing-200: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
   --spacing-100: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
 
-  --gap: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
-  --flow-space: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
-
   /* Border-Radius  */
   --border-radius: 0.5rem;
 }
@@ -121,7 +118,7 @@ body {
 
 /* Utility Classes */
 .flow > * + * {
-  margin-top: var(--flow-space);
+  margin-top: var(--spacing-200);
 }
 
 /* Flexbox Utility */
@@ -156,7 +153,7 @@ body {
 
 /* Gap Utility Class */
 .gap {
-  gap: var(--gap);
+  gap: var(--spacing-200);
 }
 
 /* Font Sizes */
