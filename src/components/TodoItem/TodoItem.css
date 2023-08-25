@@ -1,6 +1,5 @@
 .todo {
-  padding-inline: clamp(0.75rem, 3vw, 2rem);
-  padding-block: 2rem;
+  padding: var(--spacing-300);
   word-break: break-all;
 }
 

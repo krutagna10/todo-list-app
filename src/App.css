@@ -1,5 +1,5 @@
 .todos-section {
-  padding-top: clamp(3rem, 10vw, 5rem);
+  padding-top: var(--spacing-400);
   position: relative;
 }
 

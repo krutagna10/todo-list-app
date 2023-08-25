@@ -26,7 +26,7 @@ function TodosFilter({
   ];
 
   return (
-    <div className="todos__filter flex justify-center gap-200">
+    <div className="todos__filter flex justify-center gap">
       {filters.map((filter, index) => (
         <Button
           key={index}

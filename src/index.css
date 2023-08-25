@@ -16,25 +16,23 @@
   --clr-icon: hsl(235, 24%, 19%);
 
   /* Text Sizes */
-  --fs-300: 2rem;
-  --fs-200: 1rem;
-  --fs-100: 0.9375rem;
+  /* 32 -> 40, 16 -> 18, 15 -> 16 */
+  --fs-300: clamp(2rem, calc(1.83rem + 0.87vw), 2.5rem);
+  --fs-200: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --fs-100: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
 
   /* Spacing */
-  --gap-100: clamp(0.75rem, 3vw, 1rem);
-  --gap-200: clamp(1rem, 4vw, 2rem);
-  --flow-space: 1rem;
+  /* 48 -> 80, 24 -> 32, 20 -> 24, 16 -> 18, */
+  --spacing-400: clamp(3rem, calc(2.3rem + 3.48vw), 5rem);
+  --spacing-300: clamp(1.5rem, calc(1.33rem + 0.87vw), 2rem);
+  --spacing-200: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+  --spacing-100: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+
+  --gap: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+  --flow-space: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
 
   /* Border-Radius  */
-  --border-radius-100: 0.5rem;
-}
-
-@media (min-width: 32em) {
-  :root {
-    --fs-300: 2.5rem;
-    --fs-200: 1.125rem;
-    --fs-100: 1rem;
-  }
+  --border-radius: 0.5rem;
 }
 
 .dark-theme {
@@ -157,12 +155,8 @@ body {
 }
 
 /* Gap Utility Class */
-.gap-100 {
-  gap: var(--gap-100);
-}
-
-.gap-200 {
-  gap: var(--gap-200);
+.gap {
+  gap: var(--gap);
 }
 
 /* Font Sizes */

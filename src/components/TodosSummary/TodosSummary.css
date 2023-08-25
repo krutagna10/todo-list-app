@@ -1,9 +1,8 @@
 .todos__summary {
   background-color: var(--clr-card);
-  padding-block: 1.5rem;
-  padding-inline: 1.5rem;
-  border-bottom-left-radius: var(--border-radius-100);
-  border-bottom-right-radius: var(--border-radius-100);
+  padding: var(--spacing-200);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 .todos__summary > p {
