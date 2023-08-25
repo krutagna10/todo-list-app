@@ -21,7 +21,7 @@ function App() {
   return (
     <main>
       <TodosProvider>
-        <section className="todos-section flow">
+        <section className="todo-app flow">
           <h1 className="visually-hidden">Todo List</h1>
           <Header theme={theme} onToggleTheme={handleToggleTheme} />
           <TodoAdd />

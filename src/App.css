@@ -1,9 +1,9 @@
-.todos-section {
+.todo-app {
   padding-top: var(--spacing-400);
   position: relative;
 }
 
-.todos-section::before {
+.todo-app::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -15,17 +15,17 @@
 }
 
 @media (min-width: 48em) {
-  .todos-section::before {
+  .todo-app::before {
     background-image: url("./assets/bg-desktop-light.jpg");
   }
 }
 
-.dark-theme .todos-section::before {
+.dark-theme .todo-app::before {
   background-image: url("./assets/bg-mobile-dark.jpg");
 }
 
 @media (min-width: 48em) {
-  .dark-theme .todos-section::before {
+  .dark-theme .todo-app::before {
     background-image: url("./assets/bg-desktop-dark.jpg");
   }
 }
