@@ -29,33 +29,30 @@ function TodoItem({ id, todo }) {
   return (
     <>
       <li className="todo flex items-center gap">
-        <div className="flex gap">
-          <Checkbox
-            id={todo.id}
-            onChange={handleIsCompletedChange}
-            checked={todo.isCompleted}
-          />
-          <div
-            className="todo__text-wrapper"
-            style={style}
-            ref={setNodeRef}
-            {...attributes}
-            {...listeners}
+        <Checkbox
+          id={todo.id}
+          onChange={handleIsCompletedChange}
+          checked={todo.isCompleted}
+        />
+        <div
+          className="todo__text-wrapper"
+          style={style}
+          ref={setNodeRef}
+          {...attributes}
+          {...listeners}
+        >
+          <p
+            className={`todo__text fs-200 ${
+              todo.isCompleted ? "todo__text--deleted" : ""
+            }`}
           >
-            <p
-              className={`todo__text fs-200 ${
-                todo.isCompleted ? "todo__text--deleted" : ""
-              }`}
-            >
-              {todo.title}
-            </p>
-          </div>
+            {todo.title}
+          </p>
         </div>
         <button className="todo__btn-delete" onClick={handleDeleteTodo}>
-          <img src={deleteIcon} alt="" data-no-dnd="true" />
+          <img src={deleteIcon} alt="" />
         </button>
       </li>
-      <hr className="todo__horizontal-line" />
     </>
   );
 }

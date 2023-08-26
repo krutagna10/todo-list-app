@@ -6,7 +6,7 @@ import "./Header.css";
 function Header({ theme, onToggleTheme }) {
   return (
     <header className="header">
-      <Container className="header__container flex justify-between items-center">
+      <Container className="flex justify-between items-center">
         <h1 className="header__title fs-300">TODO</h1>
         <button className="header__btn" onClick={onToggleTheme}>
           <img

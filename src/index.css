@@ -2,19 +2,6 @@
   /* Font Family */
   --font-josefin-sans: "Josefin Sans", sans-serif;
 
-  /* Colors */
-  --clr-body-bg: hsl(0, 0%, 95%);
-  --clr-text-primary: hsl(235, 24%, 19%);
-  --clr-text-secondary: hsl(234, 11%, 52%);
-  --clr-title: hsl(0, 0%, 95%);
-  --clr-deleted-text: hsl(234, 39%, 85%);
-  --clr-card: hsl(0, 0%, 100%);
-  --clr-checkbox-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  --clr-checkbox-border: hsl(234, 11%, 52%);
-  --clr-active: hsl(220, 98%, 61%);
-  --clr-hover: hsl(233, 14%, 35%);
-  --clr-icon: hsl(235, 24%, 19%);
-
   /* Text Sizes */
   /* 32 -> 40, 16 -> 18, 15 -> 16 */
   --fs-300: clamp(2rem, calc(1.83rem + 0.87vw), 2.5rem);
@@ -30,6 +17,19 @@
 
   /* Border-Radius  */
   --border-radius: 0.5rem;
+
+  /* Colors */
+  --clr-body-bg: hsl(0, 0%, 95%);
+  --clr-text-primary: hsl(235, 24%, 19%);
+  --clr-text-secondary: hsl(234, 11%, 52%);
+  --clr-title: hsl(0, 0%, 95%);
+  --clr-deleted-text: hsl(234, 39%, 85%);
+  --clr-card: hsl(0, 0%, 100%);
+  --clr-checkbox-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --clr-checkbox-border: hsl(234, 11%, 52%);
+  --clr-active: hsl(220, 98%, 61%);
+  --clr-hover: hsl(233, 14%, 35%);
+  --clr-list-border: hsl(0, 0%, 0%, 0.25);
 }
 
 .dark-theme {
@@ -38,7 +38,7 @@
   --clr-deleted-text: hsl(233, 14%, 35%);
   --clr-card: hsl(235, 24%, 19%);
   --clr-hover: hsl(0, 0%, 100%);
-  --clr-icon: hsl(0, 0%, 100%);
+  --clr-list-border: hsl(0, 0%, 100%, 0.175);
 }
 
 *,

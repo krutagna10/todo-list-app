@@ -1,5 +1,5 @@
 .form {
-  padding: var(--spacing-100);
+  padding: var(--spacing-200);
   background-color: var(--clr-card);
   border-radius: var(--border-radius);
 }
@@ -13,5 +13,5 @@
 }
 
 .form__input:focus {
-  outline: none;
+  outline: 1px solid hsla(0, 0%, 100%, 0.25);
 }

@@ -1,19 +1,11 @@
 .todo {
-  padding: var(--spacing-300);
+  padding: var(--spacing-300) var(--spacing-200);
   word-break: break-all;
-}
-
-.todo > div {
-  width: 100%;
+  border-bottom: 1px solid var(--clr-list-border);
 }
 
 .todo__text-wrapper {
-  width: 100%;
-}
-
-.todo__horizontal-line {
-  height: 1px;
-  opacity: 0.175;
+  flex-grow: 1;
 }
 
 .todo__text {
