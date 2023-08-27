@@ -8,7 +8,11 @@ function Header({ theme, onToggleTheme }) {
     <header className="header">
       <Container className="flex justify-between items-center">
         <h1 className="header__title fs-300">TODO</h1>
-        <button className="header__btn" onClick={onToggleTheme}>
+        <button
+          className="header__btn"
+          onClick={onToggleTheme}
+          aria-label="Toggle Theme"
+        >
           <img
             className="header__icon"
             src={theme === "light-theme" ? iconMoon : iconSun}
