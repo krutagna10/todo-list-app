@@ -48,7 +48,11 @@ function TodoItem({ id, todo }) {
             {todo.title}
           </p>
         </div>
-        <button className="todo__btn-delete" onClick={handleDeleteTodo}>
+        <button
+          className="todo__btn-delete"
+          onClick={handleDeleteTodo}
+          aria-label="Delete Todo"
+        >
           <img src={deleteIcon} alt="" />
         </button>
       </li>
