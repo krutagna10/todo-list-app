@@ -9,15 +9,18 @@ import {
 } from "@dnd-kit/sortable";
 
 function TodoList({ todos }) {
-  const { onDragEnd } = useContext(TodosContext);
+  const { todos: originalTodos, onDragEnd } = useContext(TodosContext);
 
   function handleDragEnd(event) {
     const { active, over } = event;
     if (active.id === over.id) {
       return;
     }
-    const activeIndex = todos.findIndex((todo) => todo.id === active.id);
-    const overIndex = todos.findIndex((todo) => todo.id === over.id);
+
+    const activeIndex = originalTodos.findIndex(
+      (todo) => todo.id === active.id,
+    );
+    const overIndex = originalTodos.findIndex((todo) => todo.id === over.id);
     onDragEnd(activeIndex, overIndex);
   }
 

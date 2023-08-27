@@ -22,7 +22,6 @@ function TodoItem({ id, todo }) {
   }
 
   function handleDeleteTodo() {
-    console.log("Button Clicked");
     onDeleteTodo(todo.id);
   }
 
