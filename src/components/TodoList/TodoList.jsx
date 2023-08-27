@@ -1,27 +1,22 @@
-import TodosContext from "../../context/TodosContext.jsx";
-import TodoItem from "../TodoItem/TodoItem.jsx";
 import { useContext } from "react";
-import "./TodoList.css";
 import { closestCenter, DndContext } from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
+import TodosContext from "../../context/TodosContext.jsx";
+import TodoItem from "../TodoItem/TodoItem.jsx";
+import "./TodoList.css";
 
 function TodoList({ todos }) {
-  const { todos: originalTodos, onDragEnd } = useContext(TodosContext);
+  const { onDragEnd } = useContext(TodosContext);
 
   function handleDragEnd(event) {
     const { active, over } = event;
     if (active.id === over.id) {
       return;
     }
-
-    const activeIndex = originalTodos.findIndex(
-      (todo) => todo.id === active.id,
-    );
-    const overIndex = originalTodos.findIndex((todo) => todo.id === over.id);
-    onDragEnd(activeIndex, overIndex);
+    onDragEnd(active.id, over.id);
   }
 
   return (

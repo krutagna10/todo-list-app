@@ -1,10 +1,10 @@
-import TodoList from "../TodoList/TodoList.jsx";
 import { useContext, useReducer } from "react";
+import TodoList from "../TodoList/TodoList.jsx";
 import TodosContext from "../../context/TodosContext.jsx";
-import "./Todos.css";
 import Container from "../UI/Container/Container.jsx";
 import TodosFilter from "../TodosFilter/TodosFilter.jsx";
 import TodosSummary from "../TodosSummary/TodosSummary.jsx";
+import "./Todos.css";
 
 const INITIAL_STATE = {
   filter: "",
@@ -36,7 +36,6 @@ function Todos() {
   }
 
   function handleShowActiveClick() {
-    console.log("clicked");
     dispatch({ type: "set-filter-active" });
   }
 

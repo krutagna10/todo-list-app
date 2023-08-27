@@ -1,6 +1,6 @@
-import TodosContext from "./TodosContext.jsx";
 import { useReducer } from "react";
 import { arrayMove } from "@dnd-kit/sortable";
+import TodosContext from "./TodosContext.jsx";
 import INITIAL_TODOS from "./data.js";
 
 function reducer(todos, action) {
@@ -24,7 +24,11 @@ function reducer(todos, action) {
       });
     }
     case "drag-todos": {
-      return arrayMove(todos, action.activeIndex, action.overIndex);
+      const activeIndex = todos.findIndex(
+        (todo) => todo.id === action.activeId,
+      );
+      const overIndex = todos.findIndex((todo) => todo.id === action.overId);
+      return arrayMove(todos, activeIndex, overIndex);
     }
     case "clear-completed": {
       return todos.filter((todo) => {
@@ -52,11 +56,11 @@ function TodosProvider({ children }) {
     dispatch({ type: "delete-todo", deleteId: deleteId });
   }
 
-  function handleDragEnd(activeIndex, overIndex) {
+  function handleDragEnd(activeId, overId) {
     dispatch({
       type: "drag-todos",
-      activeIndex: activeIndex,
-      overIndex: overIndex,
+      activeId: activeId,
+      overId: overId,
     });
   }
 

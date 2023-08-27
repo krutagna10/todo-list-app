@@ -1,10 +1,10 @@
 import { useContext } from "react";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import TodosContext from "../../context/TodosContext.jsx";
 import Checkbox from "../Checkbox/Checkbox.jsx";
 import deleteIcon from "../../assets/icon-cross.svg";
 import "./TodoItem.css";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
 
 function TodoItem({ id, todo }) {
   const { onEditTodo, onDeleteTodo } = useContext(TodosContext);
