@@ -1,4 +1,3 @@
-import Button from "../UI/Button/Button.jsx";
 import { useContext } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
 import "./TodosSummary.css";
@@ -13,7 +12,7 @@ function TodosSummary() {
   return (
     <div className="todos__summary flex justify-between">
       <p className="fs-100">{itemsLeft} items left</p>
-      <Button onClick={onClearCompleted}>Clear Completed</Button>
+      <button onClick={onClearCompleted}>Clear Completed</button>
     </div>
   );
 }

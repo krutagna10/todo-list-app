@@ -1,16 +1,28 @@
-import Container from "../UI/Container/Container.jsx";
 import iconMoon from "../../assets/icon-moon.svg";
 import iconSun from "../../assets/icon-sun.svg";
 import "./Header.css";
+import { useEffect, useState } from "react";
 
-function Header({ theme, onToggleTheme }) {
+function Header() {
+  const [theme, setTheme] = useState("dark-theme");
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
+
+  function handleToggleTheme() {
+    setTheme((prevTheme) => {
+      return prevTheme === "light-theme" ? "dark-theme" : "light-theme";
+    });
+  }
+
   return (
     <header className="header">
-      <Container className="flex justify-between items-center">
+      <div className="flex justify-between items-center">
         <h1 className="header__title fs-300">TODO</h1>
         <button
           className="header__btn"
-          onClick={onToggleTheme}
+          onClick={handleToggleTheme}
           aria-label="Toggle Theme"
         >
           <img
@@ -19,7 +31,7 @@ function Header({ theme, onToggleTheme }) {
             alt=""
           />
         </button>
-      </Container>
+      </div>
     </header>
   );
 }

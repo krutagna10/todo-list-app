@@ -8,3 +8,15 @@
 .todos__summary > p {
   color: var(--clr-text-secondary);
 }
+
+.todos__summary > button {
+  color: var(--clr-text-secondary);
+  font-weight: 700;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.todos__summary > button:hover {
+  color: var(--clr-hover);
+}

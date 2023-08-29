@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import TodosContext from "../../context/TodosContext.jsx";
 import Checkbox from "../Checkbox/Checkbox.jsx";
-import Container from "../UI/Container/Container.jsx";
 import "./TodoAdd.css";
 
 function TodoAdd() {
@@ -25,7 +24,7 @@ function TodoAdd() {
   }
 
   return (
-    <Container>
+    <div>
       <form className="form flex items-center gap" onSubmit={handleSubmit}>
         <Checkbox
           id={crypto.randomUUID()}
@@ -41,7 +40,7 @@ function TodoAdd() {
           required
         />
       </form>
-    </Container>
+    </div>
   );
 }
 

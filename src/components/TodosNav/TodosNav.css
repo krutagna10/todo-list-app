@@ -1,0 +1,21 @@
+.todos__nav {
+  background-color: var(--clr-card);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-200);
+  padding: var(--spacing-200);
+}
+
+.todos__nav-link {
+  color: var(--clr-text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.todos__nav-link:hover {
+  color: var(--clr-hover);
+}
+
+.todos__nav-link.active {
+  color: var(--clr-active);
+}

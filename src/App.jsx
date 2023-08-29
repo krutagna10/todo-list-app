@@ -1,33 +1,23 @@
-import { useEffect, useState } from "react";
-import TodoAdd from "./components/TodoAdd/TodoAdd.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TodosProvider from "./context/TodosProvider.jsx";
-import Todos from "./components/Todos/Todos.jsx";
-import Header from "./components/Header/Header.jsx";
-import "./App.css";
+import Home from "./pages/Home/Home.jsx";
+import AllTodos from "./components/AllTodos/AllTodos.jsx";
+import ActiveTodos from "./components/ActiveTodos/ActiveTodos.jsx";
+import CompletedTodos from "./components/CompletedTodos/CompletedTodos.jsx";
 
 function App() {
-  const [theme, setTheme] = useState("dark-theme");
-
-  useEffect(() => {
-    document.documentElement.className = theme;
-  }, [theme]);
-
-  function handleToggleTheme() {
-    setTheme((prevTheme) => {
-      return prevTheme === "light-theme" ? "dark-theme" : "light-theme";
-    });
-  }
-
   return (
-    <main>
-      <TodosProvider>
-        <section className="todo-app flow">
-          <Header theme={theme} onToggleTheme={handleToggleTheme} />
-          <TodoAdd />
-          <Todos />
-        </section>
-      </TodosProvider>
-    </main>
+    <TodosProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route index element={<AllTodos />} />
+            <Route path="/active" element={<ActiveTodos />} />
+            <Route path="/completed" element={<CompletedTodos />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </TodosProvider>
   );
 }
 
