@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header.jsx";
+import TodoHeader from "../../components/TodoHeader/TodoHeader.jsx";
 import TodoAdd from "../../components/TodoAdd/TodoAdd.jsx";
 import "./Home.css";
 import { Outlet } from "react-router-dom";
@@ -11,7 +11,7 @@ function Home() {
     <main>
       <section className="todo-app-section flow">
         <Container className="todo-app flow">
-          <Header />
+          <TodoHeader />
           <TodoAdd />
           <div>
             <Outlet />

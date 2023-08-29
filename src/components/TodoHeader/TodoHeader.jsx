@@ -1,9 +1,9 @@
 import iconMoon from "../../assets/icon-moon.svg";
 import iconSun from "../../assets/icon-sun.svg";
-import "./Header.css";
+import "./TodoHeader.css";
 import { useEffect, useState } from "react";
 
-function Header() {
+function TodoHeader() {
   const [theme, setTheme] = useState("dark-theme");
 
   useEffect(() => {
@@ -36,4 +36,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default TodoHeader;
