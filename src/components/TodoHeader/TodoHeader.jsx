@@ -1,7 +1,7 @@
 import iconMoon from "../../assets/icon-moon.svg";
 import iconSun from "../../assets/icon-sun.svg";
-import "./TodoHeader.css";
 import { useEffect, useState } from "react";
+import "./TodoHeader.css";
 
 function TodoHeader() {
   const [theme, setTheme] = useState("dark-theme");
